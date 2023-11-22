@@ -1,3 +1,14 @@
+@use "./sassStyles/variables" as *;
+
+.app-container {
+	background-color: $veryDarkBlue;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
 h1 {
-	color: red;
+	color: $orange;
 }
