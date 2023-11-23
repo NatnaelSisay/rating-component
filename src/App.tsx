@@ -26,7 +26,9 @@ function App() {
 						</ul>
 
 						<div className="btn-container">
-							<button className="btn">Submit</button>
+							<button className="btn" data-testid="submit">
+								submit
+							</button>
 						</div>
 					</div>
 				</div>
