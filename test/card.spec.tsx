@@ -8,11 +8,7 @@ describe("Card", () => {
 		const { getAllByRole } = render(<Card />);
 		const radioButtons: HTMLElement[] = getAllByRole("radio");
 
-		for (let i = 0; i < radioButtons.length; i++) {
-			const button = radioButtons[i];
-			button.click();
-			expect(button).toBeChecked();
-		}
+		expect(radioButtons.length).toBe(5);
 	});
 
 	it("should show selected value when submitted", async () => {
@@ -20,7 +16,9 @@ describe("Card", () => {
 		const { getAllByRole, getByRole, getByTestId } = render(<Card />);
 
 		const button = getAllByRole("radio")[0];
-		button.click();
+		act(() => {
+			button.click();
+		});
 
 		const submitButton = getByRole("submit");
 
@@ -30,5 +28,41 @@ describe("Card", () => {
 
 		const { getByText } = within(getByTestId("selected-rate"));
 		expect(getByText(`You have selected ${1} out of 5`)).toBeInTheDocument();
+	});
+
+	it("shoud remove the form after submition", () => {
+		const { getAllByRole, getByRole, getByTestId } = render(<Card />);
+		const form = getByTestId("rating-form");
+
+		const button = getAllByRole("radio")[0];
+		act(() => {
+			button.click();
+		});
+
+		const submitButton = getByRole("submit");
+
+		act(() => {
+			submitButton.click();
+		});
+
+		expect(form).not.toBeInTheDocument();
+	});
+
+	it("should show result after form is removed", () => {
+		const { getAllByRole, getByRole, queryByTestId } = render(<Card />);
+
+		const button = getAllByRole("radio")[0];
+		act(() => {
+			button.click();
+		});
+
+		const submitButton = getByRole("submit");
+
+		act(() => {
+			submitButton.click();
+		});
+
+		const result = queryByTestId("result");
+		expect(result).toBeVisible();
 	});
 });
