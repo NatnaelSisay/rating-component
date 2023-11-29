@@ -12,7 +12,6 @@ describe("Card", () => {
 	});
 
 	it("should show selected value when submitted", async () => {
-		// the click should work for all the 5 radio buttons
 		const { getAllByRole, getByRole, getByTestId } = render(<Card />);
 
 		const button = getAllByRole("radio")[0];
@@ -30,7 +29,7 @@ describe("Card", () => {
 		expect(getByText(`You selected ${1} out of 5`)).toBeInTheDocument();
 	});
 
-	it("shoud remove the form after submition", () => {
+	it("shoud remove form after submition", () => {
 		const { getAllByRole, getByRole, getByTestId } = render(<Card />);
 		const form = getByTestId("rating-form");
 
@@ -48,7 +47,7 @@ describe("Card", () => {
 		expect(form).not.toBeInTheDocument();
 	});
 
-	it("should show result after form is removed", () => {
+	it("should show result after form submit", () => {
 		const { getAllByRole, getByRole, queryByTestId } = render(<Card />);
 
 		const button = getAllByRole("radio")[0];

@@ -12,7 +12,7 @@ export default function Card() {
 		setDisplayForm(false);
 	};
 
-	function RatingButton({ value }: { value: number }) {
+	function RatingLabel({ value }: { value: number }) {
 		return (
 			<label
 				htmlFor={`rating${value}`}
@@ -53,11 +53,11 @@ export default function Card() {
 					className="flex flex-col flex-start-spaced full-width form-container"
 				>
 					<div className="flex flex-center-spaced full-width">
-						<RatingButton value={1} />
-						<RatingButton value={2} />
-						<RatingButton value={3} />
-						<RatingButton value={4} />
-						<RatingButton value={5} />
+						<RatingLabel value={1} />
+						<RatingLabel value={2} />
+						<RatingLabel value={3} />
+						<RatingLabel value={4} />
+						<RatingLabel value={5} />
 					</div>
 
 					<div className="full-width">
