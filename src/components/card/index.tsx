@@ -2,6 +2,7 @@ import "./card.scss";
 import { useState } from "react";
 import Star from "../../assets/icon-star.svg";
 import Illustration from "../../assets/illustration-thank-you.svg";
+import Button from "../general/button";
 
 export default function Card() {
 	const [selecteRate, setSelectedRate] = useState(0);
@@ -17,7 +18,7 @@ export default function Card() {
 			<label
 				htmlFor={`rating${value}`}
 				className={`flex flex-center rating ${
-					selecteRate == value && "active"
+					selecteRate == value && "rating-active"
 				}`}
 			>
 				{value}
@@ -35,13 +36,13 @@ export default function Card() {
 
 	function RatingComponent() {
 		return (
-			<div className="flex flex-col flex-start-spaced card-rating">
-				<div className="flex flex-center star-container">
+			<div className="flex flex-col flex-start-spaced gap-custom">
+				<div className="flex flex-center card__star-container">
 					<img className="star" src={Star} alt="star icon" />
 				</div>
 
-				<h2>How did we do?</h2>
-				<p>
+				<h2 className="card__heading">How did we do?</h2>
+				<p className="card__text">
 					Please let us know how we did with your support request. All feedback
 					is appreciated to help us improve our offering!
 				</p>
@@ -50,7 +51,7 @@ export default function Card() {
 					action="#"
 					onSubmit={handleSubmit}
 					data-testid="rating-form"
-					className="flex flex-col flex-start-spaced full-width form-container"
+					className="flex flex-col flex-start-spaced full-width gap-custom"
 				>
 					<div className="flex flex-center-spaced full-width">
 						<RatingLabel value={1} />
@@ -61,18 +62,9 @@ export default function Card() {
 					</div>
 
 					<div className="full-width">
-						<button
-							type="submit"
-							role="submit"
-							className={`btn ${
-								selecteRate == 0 && displayForm == true
-									? "btn-disabled"
-									: "btn-enabled"
-							}`}
-							disabled={selecteRate == 0 && displayForm == true}
-						>
-							Submit
-						</button>
+						<Button isDisabled={selecteRate == 0 && displayForm == true}>
+							submit
+						</Button>
 					</div>
 				</form>
 			</div>
@@ -83,14 +75,14 @@ export default function Card() {
 		return (
 			<div
 				data-testid="result"
-				className="flex flex-col flex-center result-container"
+				className="flex flex-col flex-center gap-custom"
 			>
 				<img src={Illustration} alt="" />
-				<p data-testid="selected-rate" className="selected-rate">
+				<p data-testid="selected-rate" className="card__tag">
 					{`You selected ${selecteRate} out of 5`}
 				</p>
-				<h2>Thank you!</h2>
-				<p className="text-center">
+				<h2 className="card__heading">Thank you!</h2>
+				<p className="card__text text-center">
 					We appreciate you taking the time to give a rating. If you ever need
 					more support, don’t hesitate to get in touch!
 				</p>
