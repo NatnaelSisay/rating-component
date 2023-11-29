@@ -27,7 +27,7 @@ describe("Card", () => {
 		});
 
 		const { getByText } = within(getByTestId("selected-rate"));
-		expect(getByText(`You have selected ${1} out of 5`)).toBeInTheDocument();
+		expect(getByText(`You selected ${1} out of 5`)).toBeInTheDocument();
 	});
 
 	it("shoud remove the form after submition", () => {

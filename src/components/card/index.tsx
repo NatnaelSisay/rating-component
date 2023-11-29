@@ -1,6 +1,7 @@
 import "./card.scss";
 import { useState } from "react";
 import Star from "../../assets/icon-star.svg";
+import Illustration from "../../assets/illustration-thank-you.svg";
 
 export default function Card() {
 	const [selecteRate, setSelectedRate] = useState(0);
@@ -71,9 +72,18 @@ export default function Card() {
 
 	function ResultComponent() {
 		return (
-			<div data-testid="result">
-				<p data-testid="selected-rate">
-					{`You have selected ${selecteRate} out of 5`}
+			<div
+				data-testid="result"
+				className="flex flex-col flex-center result-container"
+			>
+				<img src={Illustration} alt="" />
+				<p data-testid="selected-rate" className="selected-rate">
+					{`You selected ${selecteRate} out of 5`}
+				</p>
+				<h2>Thank you!</h2>
+				<p className="text-center">
+					We appreciate you taking the time to give a rating. If you ever need
+					more support, don’t hesitate to get in touch!
 				</p>
 			</div>
 		);
