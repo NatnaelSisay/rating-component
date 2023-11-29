@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github](https://github.com/NatnaelSisay/rating-component.git)
+- Live Site URL: [Netlify](https://super-druid-2bd448.netlify.app)
 
 ## My process
 
@@ -58,8 +58,8 @@ Used TDD to guide development in order to test features, provide predictable res
 To run locally
 
 ```bash
-git clone
-cd
+git clone https://github.com/NatnaelSisay/rating-component.git
+cd rating-component
 npm install
 npm run dev
 ```
