@@ -2,18 +2,12 @@
 
 .app-container {
 	background-color: $veryDarkBlue;
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	height: 100vh;
 }
 
-.app-content {
+.card-container {
 	max-width: 25.625rem; // 410px
 	width: 90%;
 	border-radius: 0.9375rem; // 15px
-	padding: 1.5625rem; // 25px
-
-	background: radial-gradient($medimGrey, $darkBlue);
+	overflow: hidden;
 }

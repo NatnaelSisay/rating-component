@@ -1,10 +1,13 @@
 @use "../../sassStyles/variables" as *;
 
-.card-rating {
-	display: flex;
-	flex-direction: column;
-	align-items: start;
-	justify-content: space-between;
+.card {
+	padding: 1.5625rem; // 25px
+
+	background: radial-gradient(at top, $darkBlue, $veryDarkBlue);
+}
+
+.card-rating,
+.form-container {
 	gap: 22px;
 }
 
@@ -13,54 +16,13 @@
 	height: 2.6875rem;
 	border-radius: 50%;
 
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	background-color: $darkBlue;
 }
 
-.form-container {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: start;
-	justify-content: space-between;
-	gap: 22px;
-}
-
-.radio-input {
-	display: none;
-}
-
-h2 {
-	color: $white;
-	font-size: 1.125rem; // 18px
-	font-weight: 700;
-}
-
-p {
-	font-size: 0.75rem; // 12px
-	color: $medimGrey;
-	font-weight: 700;
-}
-
-.rating-values {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	width: 100%;
-}
-
-.rating-value {
+.rating {
 	width: 43px;
 	height: 43px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+
 	background-color: $medimGrey;
 	border-radius: 50%;
 	color: $lightGrey;
@@ -71,21 +33,17 @@ p {
 	color: $white;
 }
 
-.btn-container {
+.btn {
+	border-radius: 100vw;
+	background-color: $orange;
+	color: $white;
+
 	width: 100%;
+	border: 0;
+	padding: 1.125rem; // 18px
 
-	.btn {
-		border-radius: 100vw;
-		background-color: $orange;
-		color: $white;
-
-		width: 100%;
-		border: 0;
-		padding: 1.125rem; // 18px
-
-		text-transform: uppercase;
-		font-size: 0.75rem; // 12px
-		font-weight: 700;
-		letter-spacing: 3px;
-	}
+	text-transform: uppercase;
+	font-size: 0.75rem; // 12px
+	font-weight: 700;
+	letter-spacing: 3px;
 }

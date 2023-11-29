@@ -1,3 +1,48 @@
+@use "./variables" as *;
+
 body {
 	font-family: "Overpass", sans-serif;
+}
+
+h2 {
+	color: $white;
+	font-size: 1.125rem; // 18px
+	font-weight: 700;
+}
+
+p {
+	font-size: 0.75rem; // 12px
+	color: $medimGrey;
+	font-weight: 700;
+}
+
+.flex {
+	display: flex;
+
+	&-col {
+		flex-direction: column;
+	}
+
+	&-center {
+		align-items: center;
+		justify-content: center;
+	}
+
+	&-center-spaced {
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&-start-spaced {
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+}
+
+.full-width {
+	width: 100%;
+}
+
+.hidden {
+	display: none;
 }

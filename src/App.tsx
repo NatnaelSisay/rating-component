@@ -5,8 +5,8 @@ import Card from "./components/card";
 function App() {
 	return (
 		<>
-			<div className="app-container">
-				<div className="app-content">
+			<div className="flex flex-center app-container">
+				<div className="card-container">
 					<Card />
 				</div>
 			</div>

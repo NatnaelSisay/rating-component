@@ -15,11 +15,13 @@ export default function Card() {
 		return (
 			<label
 				htmlFor={`rating${value}`}
-				className={`rating-value ${selecteRate == value && "active"}`}
+				className={`flex flex-center rating ${
+					selecteRate == value && "active"
+				}`}
 			>
 				{value}
 				<input
-					className="radio-input"
+					className="hidden"
 					type="radio"
 					name="rate"
 					id={`rating${value}`}
@@ -32,8 +34,8 @@ export default function Card() {
 
 	function RatingComponent() {
 		return (
-			<div className="card-rating">
-				<div className="star-container">
+			<div className="flex flex-col flex-start-spaced card-rating">
+				<div className="flex flex-center star-container">
 					<img className="star" src={Star} alt="star icon" />
 				</div>
 
@@ -47,17 +49,17 @@ export default function Card() {
 					action="#"
 					onSubmit={handleSubmit}
 					data-testid="rating-form"
-					className="form-container"
+					className="flex flex-col flex-start-spaced full-width form-container"
 				>
-					<ul className="rating-values">
+					<div className="flex flex-center-spaced full-width">
 						<RatingButton value={1} />
 						<RatingButton value={2} />
 						<RatingButton value={3} />
 						<RatingButton value={4} />
 						<RatingButton value={5} />
-					</ul>
+					</div>
 
-					<div className="btn-container">
+					<div className="full-width">
 						<button type="submit" role="submit" className="btn">
 							Submit
 						</button>
@@ -79,7 +81,7 @@ export default function Card() {
 
 	return (
 		<>
-			<div className="">
+			<div className="card">
 				{displayForm && <RatingComponent />}
 				{!displayForm && <ResultComponent />}
 			</div>
