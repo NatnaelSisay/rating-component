@@ -1,4 +1,4 @@
-import { getByTestId, render, within } from "@testing-library/react";
+import { render, within } from "@testing-library/react";
 
 import Card from "../src/components/card";
 import { act } from "react-dom/test-utils";
