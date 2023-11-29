@@ -61,7 +61,16 @@ export default function Card() {
 					</div>
 
 					<div className="full-width">
-						<button type="submit" role="submit" className="btn">
+						<button
+							type="submit"
+							role="submit"
+							className={`btn ${
+								selecteRate == 0 && displayForm == true
+									? "btn-disabled"
+									: "btn-enabled"
+							}`}
+							disabled={selecteRate == 0 && displayForm == true}
+						>
 							Submit
 						</button>
 					</div>

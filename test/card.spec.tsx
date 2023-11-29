@@ -1,4 +1,4 @@
-import { render, within } from "@testing-library/react";
+import { getByTestId, render, within } from "@testing-library/react";
 
 import Card from "../src/components/card";
 import { act } from "react-dom/test-utils";
@@ -63,5 +63,11 @@ describe("Card", () => {
 
 		const result = queryByTestId("result");
 		expect(result).toBeVisible();
+	});
+
+	it("should disable submit on initial render", () => {
+		const { getByRole } = render(<Card />);
+		const submit = getByRole("submit");
+		expect(submit).toBeDisabled();
 	});
 });

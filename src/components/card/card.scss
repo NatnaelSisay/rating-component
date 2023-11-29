@@ -59,10 +59,17 @@
 	letter-spacing: 0.1875rem;
 
 	transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+}
+
+.btn-enabled {
 	&:hover {
 		background-color: $white;
-		color: orange;
+		color: $orange;
 	}
+}
+
+.btn-disabled {
+	background-color: hsla(25, 97%, 53%, 0.747);
 }
 
 .selected-rate {
