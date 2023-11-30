@@ -11,7 +11,6 @@ export default function Button(props: ButtonPropsType) {
 		<button
 			type="submit"
 			role="submit"
-			{...props}
 			className={`btn ${props.isDisabled ? "btn-disabled" : "btn-enabled"}`}
 			disabled={props.isDisabled}
 		>
