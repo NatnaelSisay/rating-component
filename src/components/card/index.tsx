@@ -3,6 +3,7 @@ import { useState } from "react";
 import Star from "../../assets/icon-star.svg";
 import Illustration from "../../assets/illustration-thank-you.svg";
 import Button from "../general/button";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Card() {
 	const [selecteRate, setSelectedRate] = useState(0);
@@ -93,8 +94,17 @@ export default function Card() {
 	return (
 		<>
 			<div className="card">
-				{displayForm && <RatingComponent />}
-				{!displayForm && <ResultComponent />}
+				<AnimatePresence mode="wait">
+					<motion.div
+						key={displayForm ? "form" : "result"}
+						initial={{ y: 10, opacity: 0 }}
+						animate={{ y: 0, opacity: 1 }}
+						exit={{ y: -10, opacity: 0 }}
+						transition={{ duration: 0.2 }}
+					>
+						{displayForm ? <RatingComponent /> : <ResultComponent />}
+					</motion.div>
+				</AnimatePresence>
 			</div>
 		</>
 	);
