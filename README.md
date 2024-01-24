@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/NatnaelSisay/rating-component.git)
-- Live Site URL: [Netlify](https://super-druid-2bd448.netlify.app)
+- Live Site URL: [Netlify](https://rating-component-front-end-mentor.netlify.app/)
 
 ## My process
 
@@ -74,7 +74,7 @@ In order to improve user interaction, I wanted to incorporate 3D capabilities in
 
 ## Author
 
-- LinkedIn - [Natnael Kagnaw](https://www.linkedin.com/in/natnael-kagnaw/)
+- LinkedIn - [Natnael Kagnaw](https://www.linkedin.com/in/natnael-kagnaw01/)
 - Frontend Mentor - [@NatnaelSisay](https://www.frontendmentor.io/profile/NatnaelSisay)
 
 ## Acknowledgments
