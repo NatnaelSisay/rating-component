@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('dir-list') {
       steps {
-        sh 'la -la'
+        sh 'ls -la'
       }
     }
 
